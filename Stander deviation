@@ -1,0 +1,24 @@
+import random
+import math
+
+def calc_std_deviation(num):
+    numbers = []
+    for _ in range(num):
+        number = random.randint(1, 100)    
+        numbers.append(number)
+
+    avg = sum(numbers) / num
+
+    total = 0
+    for num in numbers:
+        total += (num - avg) ** 2
+
+    std_dev = math.sqrt(total / num)
+
+    print("Numbers:", numbers)
+    print(" Stander Deviation Of These Numbers:", std_dev)
+
+
+
+num = int(input("Enter the number of times you want to generate a random number  : "))
+calc_std_deviation(num)
